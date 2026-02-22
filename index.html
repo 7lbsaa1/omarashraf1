@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية | عمر اشرف السيد</title>
+    <style>
+        :root {
+            --primary-color: #54ACBF;
+            --secondary-color: #A7EBF2;
+            --text-color: #2b2b2b;
+            --bg-card: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cv-card {
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .header-bg {
+            height: 120px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .profile-container {
+            margin-top: -75px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            background-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .fallback-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            background-color: var(--primary-color);
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .personal-info {
+            padding: 15px 25px 5px;
+        }
+
+        .name {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            text-align: right;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .detail-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-align: right;
+            padding: 0 25px;
+        }
+
+        .games-container {
+            padding: 0 25px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .game-tag {
+            background-color: var(--secondary-color);
+            color: #1a5c6b;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: 1px solid var(--primary-color);
+        }
+
+        .game-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .social-container {
+            padding: 0 25px 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(84, 172, 191, 0.4);
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 400px) {
+            .name { font-size: 1.5rem; }
+            .details-grid { font-size: 0.9rem; }
+            .social-link { width: 40px; height: 40px; }
+            svg { width: 20px; height: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-card">
+        <div class="header-bg"></div>
+        
+        <div class="profile-container">
+            <!-- مسار الصورة كما هو مطلوب، مع وجود بديل في حال لم تعمل الصورة داخل المتصفح -->
+            <div id="fallback-img" class="fallback-img">🎮</div>
+            <img id="profile-img" class="profile-img" src="omarashraf.jpg" alt="صورة عمر اشرف السيد" onerror="this.style.display='none'; document.getElementById('fallback-img').style.display='flex';">
+        </div>
+
+        <div class="personal-info">
+            <h1 id="cv-name" class="name"></h1>
+            <div class="job-title">
+                <span>🕹️</span> <span id="cv-title"></span>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <strong>تاريخ الميلاد:</strong> <span id="cv-dob"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🎂</span>
+                    <strong>السن:</strong> <span id="cv-age"></span> سنة
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">📍</span>
+                    <strong>مكان الميلاد:</strong> <span id="cv-birthplace"></span>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="section-title">الألعاب المفضلة 🎯</h3>
+        <div id="cv-games" class="games-container">
+            <!-- سيتم إضافة الألعاب هنا عن طريق الجافاسكريبت -->
+        </div>
+
+        <h3 class="section-title" style="text-align: center;">تواصل معي 🌐</h3>
+        <div id="cv-socials" class="social-container">
+            <!-- سيتم إضافة منصات التواصل هنا عن طريق الجافاسكريبت -->
+        </div>
+    </div>
+
+    <script>
+        // بيانات الشخص مطلوبة في الجافاسكريبت
+        const personData = {
+            name: "عمر اشرف السيد",
+            title: "صانع محتوى جيمنج",
+            dob: "28-11-2007",
+            age: 18,
+            birthplace: "القاهره، مصر",
+            games: [
+                "RAINBOW SIX", 
+                "VALORANT", 
+                "EFOOTBALL", 
+                "PUBG MOBILE"
+            ],
+            socials: [
+                {
+                    name: "YouTube",
+                    url: "https://www.youtube.com/@OmarLou11",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`
+                },
+                {
+                    name: "Facebook",
+                    url: "https://www.facebook.com/omar.ashraf.960403",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>`
+                },
+                {
+                    name: "Instagram",
+                    url: "https://www.instagram.com/_3morryy/",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>`
+                },
+                {
+                    name: "TikTok",
+                    url: "https://www.tiktok.com/@_omarashraff__",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.96-.5 3.96-1.6 5.56-1.5 2.15-4.1 3.44-6.7 3.26-2.5-.18-4.83-1.5-6.07-3.6-1.27-2.12-1.28-4.8-.08-6.93 1.2-2.16 3.64-3.64 6.14-3.64.12 0 .24.01.35.01v4.06c-1.72-.1-3.41.97-4.08 2.58-.6 1.44-.33 3.2 1.05 4.3 1.18.94 2.85 1.15 4.22.6 1.4-.55 2.4-1.85 2.55-3.34.02-.15.02-.3.02-.45V.02h2.12z"/></svg>`
+                }
+            ]
+        };
+
+        // دالة ربط البيانات بعناصر الـ HTML
+        function renderCV() {
+            // إضافة المعلومات الأساسية
+            document.getElementById('cv-name').textContent = personData.name;
+            document.getElementById('cv-title').textContent = personData.title;
+            document.getElementById('cv-dob').textContent = personData.dob;
+            document.getElementById('cv-age').textContent = personData.age;
+            document.getElementById('cv-birthplace').textContent = personData.birthplace;
+
+            // إضافة الألعاب
+            const gamesContainer = document.getElementById('cv-games');
+            personData.games.forEach(game => {
+                const span = document.createElement('span');
+                span.className = 'game-tag';
+                span.textContent = game;
+                gamesContainer.appendChild(span);
+            });
+
+            // إضافة روابط التواصل الاجتماعي (أيقونات)
+            const socialsContainer = document.getElementById('cv-socials');
+            personData.socials.forEach(social => {
+                const a = document.createElement('a');
+                a.href = social.url;
+                a.className = 'social-link';
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.title = social.name;
+                a.innerHTML = social.icon;
+                socialsContainer.appendChild(a);
+            });
+        }
+
+        // تشغيل الدالة عند تحميل الصفحة
+        window.addEventListener('DOMContentLoaded', renderCV);
+    </script>
+</body>
+</html>
